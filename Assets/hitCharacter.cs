@@ -5,7 +5,11 @@ using UnityEngine;
 public class hitCharacter : MonoBehaviour
 {
     public GameObject box;
+    public GameObject wall;
+    public ParticleSystem fire;
+    public ParticleSystem chest;
     public Animator animator;
+    public bool isTrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,26 +19,23 @@ public class hitCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else{
-            animator.SetBool("isRunning", false);
-        }
-
-        if(Input.GetKeyUp(KeyCode.E)){
-            Vector3 newPosition = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
-            GameObject clone = Instantiate(box, newPosition, transform.rotation);
-            clone.SetActive(true);
-        }
-
         
+    }
+    void OnCollisionStay(Collision collision) {
+       
     }
     void OnCollisionEnter(Collision collision)
     {
-      
-        animator.SetTrigger("getHit");
-       
+         if(collision.gameObject.Equals(wall)){
+            chest.Play(true);   
+        }
+        Debug.Log(collision.gameObject);
+        if(collision.gameObject.name == "Box"){
+            if(!animator.GetCurrentAnimatorStateInfo(0).IsName("hit")){
+                fire.Play(true);
+                animator.SetTrigger("getHit");
+            }
+        }
+          
     }
 }

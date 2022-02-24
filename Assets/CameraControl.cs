@@ -7,8 +7,6 @@ public class CameraControl : MonoBehaviour
     // Start is called before the first frame update
     
     public Rigidbody cylinder;
-
-   
     public Vector3 overTheShoulderOffset;
     public Quaternion overTheShoulderRotation;
     public Vector3 topDownPosition;
@@ -20,14 +18,14 @@ public class CameraControl : MonoBehaviour
         overTheShoulderOffset = new Vector3(0,1,-5);
         overTheShoulderRotation = Quaternion.Euler(0,0,0);
         topDownPosition = new Vector3(0,11,-3);
-        topDownRotation =  Quaternion.Euler(90,0,0);
+        topDownRotation =  Quaternion.Euler(50,0,0);
         transform.rotation=  topDownRotation;
         overTheShoulder = false;
         Rigidbody[] firstList = GameObject.FindObjectsOfType<Rigidbody>();
         for(var i = 0; i < firstList.Length; i++)
         {
             Debug.Log(firstList[i].gameObject.name);
-            if(firstList[i].name == "Cylinder")
+            if(firstList[i].name == "Standing Idle")
             {
                 cylinder = firstList[i];
             }

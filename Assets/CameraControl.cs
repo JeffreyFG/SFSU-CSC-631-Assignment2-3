@@ -9,14 +9,20 @@ public class CameraControl : MonoBehaviour
     public Rigidbody cylinder;
 
    
-    public Vector3 overTheShoulderOffset = new Vector3(0,1,-5);
-    public Quaternion overTheShoulderRotation = Quaternion.Euler(0,0,0);
-    public Vector3 topDownOffPosition = new Vector3(0,11,-3);
-    public Quaternion topDownRotation =  Quaternion.Euler(80,0,0);
+    public Vector3 overTheShoulderOffset;
+    public Quaternion overTheShoulderRotation;
+    public Vector3 topDownPosition;
+    public Quaternion topDownRotation;
     
-    public bool overTheShoulder = false;
+    public bool overTheShoulder;
     void Start()
     {
+        overTheShoulderOffset = new Vector3(0,1,-5);
+        overTheShoulderRotation = Quaternion.Euler(0,0,0);
+        topDownPosition = new Vector3(0,11,-3);
+        topDownRotation =  Quaternion.Euler(90,0,0);
+        transform.rotation=  topDownRotation;
+        overTheShoulder = false;
         Rigidbody[] firstList = GameObject.FindObjectsOfType<Rigidbody>();
         for(var i = 0; i < firstList.Length; i++)
         {
@@ -43,9 +49,8 @@ public class CameraControl : MonoBehaviour
         }
         else if(!overTheShoulder)
         {
-            transform.position = topDownOffPosition;
+            transform.position = topDownPosition;
             transform.rotation = topDownRotation;
         }
-        
     }
 }

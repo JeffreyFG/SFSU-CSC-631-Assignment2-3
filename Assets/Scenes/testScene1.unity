@@ -313,13 +313,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060821272}
-  m_LocalRotation: {x: 0.023167562, y: -0, z: -0, w: 0.9997316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.27, y: 6.37, z: -3.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 2.655, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1060821276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,8 +335,8 @@ MonoBehaviour:
   cylinder: {fileID: 0}
   overTheShoulderOffset: {x: 0, y: 1, z: -5}
   overTheShoulderRotation: {x: 0.6427878, y: 0, z: 0, w: 0.76604426}
-  topDownOffPosition: {x: 0, y: 11, z: -2.55}
-  topDownRotation: {x: 90, y: 0, z: 0, w: 0}
+  topDownPosition: {x: 0, y: 11, z: -3}
+  topDownRotation: {x: 0, y: 0, z: 0, w: 1}
   overTheShoulder: 0
 --- !u!1 &1438972369
 GameObject:
